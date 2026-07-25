@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #f2ede0;
+  --cream-2: #ece5d4;
+  --ink: #14120f;
+  --ink-soft: #2a2620;
+  --orange: #e8541c;
+  --orange-dark: #c2440f;
+  --line: #14120f;
+  --muted: #6b665a;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-cream-2: var(--cream-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-orange: var(--orange);
+  --color-orange-dark: var(--orange-dark);
+  --color-muted: var(--muted);
+  --font-display: var(--font-archivo);
+  --font-mono: var(--font-jetbrains);
+  --font-body: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--orange);
+  color: var(--cream);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(20, 18, 15, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 18, 15, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track-slow {
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes blink {
+  0%, 45% { opacity: 1; }
+  50%, 95% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.caret {
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .marquee-track-slow,
+  .caret,
+  .fade-up,
+  .img-zoom-out,
+  .hero-float,
+  html {
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.card-shadow {
+  box-shadow: 6px 6px 0 0 var(--ink);
+}
+
+.card-shadow-orange {
+  box-shadow: 6px 6px 0 0 var(--orange);
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+.img-zoom-out {
+  animation: zoomOut 7s ease-in-out infinite alternate;
+  transform-origin: center top;
+  will-change: transform;
+}
+
+.group:hover .img-zoom-out {
+  animation-play-state: paused;
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-22px); }
+}
+
+.hero-float {
+  animation: floatUpDown 5s ease-in-out infinite;
+}
