@@ -22,9 +22,9 @@ export const profile = {
 };
 
 export const aboutStats = [
-  { value: "10", label: "PUBLIC PROJECTS" },
-  { value: "650+", label: "LEETCODE SOLVED" },
-  { value: "3", label: "COMPETITION WINS" },
+  { value: "15", label: "PUBLIC PROJECTS" },
+  { value: "700+", label: "LEETCODE SOLVED" },
+  { value: "5", label: "COMPETITION WINS" },
 ];
 
 export const techStack = [
