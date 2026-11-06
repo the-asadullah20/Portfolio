@@ -24,7 +24,7 @@ export const profile = {
 export const aboutStats = [
   { value: "15", label: "PUBLIC PROJECTS" },
   { value: "700+", label: "LEETCODE SOLVED" },
-  { value: "5", label: "COMPETITION WINS" },
+  { value: "6", label: "COMPETITION WINS" },
 ];
 
 export const techStack = [
@@ -64,7 +64,7 @@ export const education = {
   degree: "BS Computer Science",
   school: "Punjab University College of Information Technology (PUCIT)",
   period: "2023 – Present",
-  detail: "CGPA: 3.68. Coursework spans AI/ML systems, competitive programming, and full-stack software engineering.",
+  detail: "CGPA: 3.65. Coursework spans AI/ML systems, competitive programming, and full-stack software engineering.",
 };
 
 export const skillBars = [
